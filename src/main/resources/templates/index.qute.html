@@ -12,8 +12,8 @@
         <h1>Веб-калькулятор</h1>
         <form action="/" method="post">
             <div class="calculator-container">
-                <!-- Поле A -->
-                <input name="a" type="text" value="{a}" placeholder="A" class="number-input">
+                <!-- Поле a -->
+                <input name="a" type="text" value="{a}" placeholder="a" class="number-input">
 
                 <div class="operations">
                     <!-- Кнопка сложения (стилизованная радио-кнопка) -->
@@ -27,10 +27,22 @@
                         <input type="radio" name="op" value="sub" {#if op == 'sub'}checked{/if} class="op-radio">
                         <span class="op-button">−</span>
                     </label>
+
+                    <!-- Кнопка умножения -->
+                    <label class="op-label">
+                        <input type="radio" name="op" value="mul" {#if op == 'mul'}checked{/if} class="op-radio">
+                        <span class="op-button">*</span>
+                    </label>
+
+                    <!-- Кнопка деления -->
+                    <label class="op-label">
+                        <input type="radio" name="op" value="div" {#if op == 'div'}checked{/if} class="op-radio">
+                        <span class="op-button">/</span>
+                    </label>
                 </div>
 
-                <!-- Поле B -->
-                <input name="b" type="text" value="{b}" placeholder="B" class="number-input">
+                <!-- Поле b -->
+                <input name="b" type="text" value="{b}" placeholder="b" class="number-input">
             </div>
 
             <button type="submit" class="calculate-btn">Вычислить</button>

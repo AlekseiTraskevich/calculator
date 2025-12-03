@@ -95,3 +95,35 @@ body {
   font-weight: bold;
   margin-top: 20px;
 }
+
+
+
+
+
+.operations {
+    display: grid;
+    grid-template-columns: repeat(2, 30px); /* 2 колонки по 50px */
+    grid-gap: 5px; /* расстояние между кнопками */
+}
+
+.op-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.op-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 50px;
+    text-align: center;
+    justify-content: center;       /* горизонтальное центрирование */
+    align-items: center;
+    font-size: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
