@@ -12,54 +12,108 @@
         <h1>Веб-калькулятор</h1>
         <form action="/" method="post">
             <div class="calculator-container">
-                <!-- Поле a -->
                 <input name="a" type="text" value="{a}" placeholder="a" class="number-input">
 
                 <div class="operations">
-                    <!-- Кнопка сложения (стилизованная радио-кнопка) -->
                     <label class="op-label">
-                        <input type="radio" name="op" value="add" {#if op == 'add' || op == null}checked{/if} class="op-radio">
+                        <input type="radio" name="opAB" value="add" {#if opAB == 'add' || opAB == null}checked{/if}
+                               class="op-radio">
                         <span class="op-button">+</span>
                     </label>
-
-                    <!-- Кнопка вычитания -->
                     <label class="op-label">
-                        <input type="radio" name="op" value="sub" {#if op == 'sub'}checked{/if} class="op-radio">
+                        <input type="radio" name="opAB" value="sub" {#if opAB == 'sub'}checked{/if} class="op-radio">
                         <span class="op-button">−</span>
                     </label>
-
-                    <!-- Кнопка умножения -->
                     <label class="op-label">
-                        <input type="radio" name="op" value="mul" {#if op == 'mul'}checked{/if} class="op-radio">
+                        <input type="radio" name="opAB" value="mul" {#if opAB == 'mul'}checked{/if} class="op-radio">
                         <span class="op-button">*</span>
                     </label>
-
-                    <!-- Кнопка деления -->
                     <label class="op-label">
-                        <input type="radio" name="op" value="div" {#if op == 'div'}checked{/if} class="op-radio">
+                        <input type="radio" name="opAB" value="div" {#if opAB == 'div'}checked{/if} class="op-radio">
                         <span class="op-button">/</span>
                     </label>
                 </div>
 
-                <!-- Поле b -->
                 <input name="b" type="text" value="{b}" placeholder="b" class="number-input">
+
+                <div class="operations">
+                    <label class="op-label">
+                        <input type="radio" name="opBC" value="add" {#if opBC == 'add' || opBC == null}checked{/if}
+                               class="op-radio">
+                        <span class="op-button">+</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opBC" value="sub" {#if opBC == 'sub'}checked{/if} class="op-radio">
+                        <span class="op-button">−</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opBC" value="mul" {#if opBC == 'mul'}checked{/if} class="op-radio">
+                        <span class="op-button">*</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opBC" value="div" {#if opBC == 'div'}checked{/if} class="op-radio">
+                        <span class="op-button">/</span>
+                    </label>
+                </div>
+
+                <input name="c" type="text" value="{c}" placeholder="c" class="number-input">
+
+                <div class="operations">
+                    <label class="op-label">
+                        <input type="radio" name="opCD" value="add" {#if opCD == 'add' || opCD == null}checked{/if}
+                               class="op-radio">
+                        <span class="op-button">+</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opCD" value="sub" {#if opCD == 'sub'}checked{/if} class="op-radio">
+                        <span class="op-button">−</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opCD" value="mul" {#if opCD == 'mul'}checked{/if} class="op-radio">
+                        <span class="op-button">*</span>
+                    </label>
+                    <label class="op-label">
+                        <input type="radio" name="opCD" value="div" {#if opCD == 'div'}checked{/if} class="op-radio">
+                        <span class="op-button">/</span>
+                    </label>
+                </div>
+
+                <input name="d" type="text" value="{d}" placeholder="d" class="number-input">
             </div>
 
             <button type="submit" class="calculate-btn">Вычислить</button>
+
+            <div class="extra-options">
+                <label>
+                    <input type="radio" name="roundMode" value="math" {#if roundMode == 'math' || roundMode == null || roundMode == "0"}checked{/if}>
+                    Математическое
+                </label>
+                <label>
+                    <input type="radio" name="roundMode" value="bank" {#if roundMode == 'bank'}checked{/if}>
+                    Бухгалтерское
+                </label>
+                <label>
+                    <input type="radio" name="roundMode" value="down" {#if roundMode == 'down'}checked{/if}>
+                    Усечение
+                </label>
+            </div>
+
         </form>
 
         {#if error}
+        {#if error != "0"}
         <p class="error-message">{error}</p>
+        {/if}
         {/if}
         {#if result}
         <p class="result">Результат: {result}</p>
+        <p class="roundResult">Округление: {roundResult}</p>
         {/if}
     </div>
-
-    <footer style="margin-top: auto; padding: 20px 0; text-align: center; background-color: #f5f5f5;">
-        <p>Траскевич Алексей Юрьевич</p>
-        <p>4 курс | 4 группа | 2025</p>
-    </footer>
 </main>
+<footer style="margin-top: auto; padding: 20px 0; text-align: center; background-color: #f5f5f5;">
+    <p>Траскевич Алексей Юрьевич</p>
+    <p>4 курс . 4 группа . 2025</p>
+</footer>
 </body>
 </html>
