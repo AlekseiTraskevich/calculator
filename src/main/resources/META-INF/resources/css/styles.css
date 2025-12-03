@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.calculator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.number-input {
+  width: 80px;
+  height: 50px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.operations {
+  display: flex;
+  gap: 10px;
+}
+
+.op-label {
+  cursor: pointer;
+  margin: 0;
+}
+
+.op-radio {
+  display: none; /* Скрываем настоящие радио-кнопки */
+}
+
+.op-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Стиль для выбранной кнопки */
+.op-radio:checked + .op-button {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Эффект при наведении */
+.op-button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.calculate-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.calculate-btn:hover {
+  background-color: #0b7dda;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.result {
+  font-size: 1.3em;
+  color: #2E7D32;
+  font-weight: bold;
+  margin-top: 20px;
+}
